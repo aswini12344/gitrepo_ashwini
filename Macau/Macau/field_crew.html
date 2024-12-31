@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Crew Check Form</title>
+
+    <!-- All CSS PART(Design) -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0%;
+            padding: 0%;
+            background-color: rgb(92, 97, 100);
+            box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+		    width:216.99vh;
+        }
+
+        .main {
+            border: 5px solid rgb(0, 168, 243);
+            background-color: rgb(0, 168, 243);
+            text-align: center;
+            color: aliceblue;
+            height: 112px; 
+
+        }
+
+         .main h1 {
+            padding-top: 25px;
+        }
+
+        #container1{
+            width: 180px;
+            height: 1120px;
+            float: left;
+            background-color: rgb(92, 97, 100);
+            border: 1px solid rgb(92, 97, 100);
+            color: white;
+            display: grid;
+            padding: 10px;
+            font-size: larger;
+            margin: 8px;
+            margin-left: -157px;
+             
+      }
+
+
+      #container3
+        { 
+            width: 190px;
+            height: 1120px;
+            float: right;
+            display: grid;
+            background-color: rgb(92, 97, 100);
+            border: 1px solid rgb(92, 97, 100);
+            padding: 10px;
+            margin: 8px;
+            margin-right:-210px;
+            color: white;
+			padding-right: px;
+        }
+
+        .section {
+            width: 700px;
+            height: 1145px;
+            float: left;
+            background: 10px solid rgb(92, 97, 100);
+            border: 2px solid rgba(5, 57, 89, 0.128);
+            padding: 10px;
+            margin: 8px;
+            margin-left: 40px;
+            color: white;
+            font-size: larger;
+            text-align: justify;
+            display: none;
+            
+        }
+
+		
+    /* Close button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+        #cem {
+	float: left;
+    width: 145px;
+    margin-top: -79px;
+    margin-left: 0px;
+    height: 150px;
+    padding: 17px;
+        }
+
+        #asp {
+	float: right;
+    width: 160px;
+    height: 82px;
+    margin-top: -35px;
+    margin-right: 47px;
+    padding: -1px;
+    padding-right: -6px;
+        }
+
+        #container3 label {
+            display: inline-block;
+            width: 50px;
+        }
+        /* prview button */
+        .btn #previewBtn{
+			height: 30px;
+			width: 80px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #0f6ef1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        } 
+
+        /* submit button */
+        .btn #submitBtn {
+			height: 30px;
+			width: 80px;
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #0f6ef1;
+            color: white;
+            border: none;
+            cursor: pointer;
+           
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: content-box;
+        }
+
+        .box h2 {
+            margin-bottom: 10px;
+        }
+
+        .box {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .box input {
+            width: 200px;
+        }
+        .hidden {
+            display: none;
+        }
+		.equipment-list { /* For the list of equipment */
+  display: flex;  /* Use Flexbox for better control */
+  flex-direction: column;
+  gap: 10px; /* Adjust spacing between list items */
+}
+.label {
+  font-size: 14px; /* Example font size reduction */
+}
+.input-field { /* For text fields */
+  margin-bottom: 10px; /* Example margin adjustment */
+}
+
+.sign-pad {
+            border: 1px solid #000;
+            width: 200px;
+            height: 100px; 
+			background-color: white; 
+			border-color: white;
+        }
+		  /* The Modal (background) */
+		  .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: white;
+			color: black;
+			margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+.hidden::before 
+{
+	  display:none; 
+}
+.hidden::after
+{
+	display:block; 
+}
+
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- head Part -->
+    <div class="main">
+        <h1>Field Crew Check Form</h1>
+        <img src="cem1.png" id="cem">
+        <img src="ASPENTECH.png" id="asp">
+    </div>
+	
+    <!-- Left container -->
+    <div class="container" >
+        <div id="container1" class="box">
+            <button id="natureOfJobBtn">Nature of Job</button> 
+            <button id="equipment1Btn">Equipment I</button> 
+            <button id="equipment2Btn">Equipment II</button> 
+            <button id="equipment3Btn">Equipment III</button> 
+            <button id="protectionActuation1Btn">Protection Actuation I</button> 
+            <button id="protectionActuation2Btn">Protection Actuation II</button> 
+            <button id="protectionActuation3Btn">Protection Actuation III</button> 
+            <button id="observationBtn">Observation</button> 
+            <button id="repairProcedureBtn">Repair Procedure</button> 
+            <button id="meterSealBtn">Meter Seal</button>  
+            <button id="reportBtn">Report</button>
+            <button id="PreliminaryBtn">Preliminary cause of failure</button> 
+            <button id="ResponsibilityBtn">Responsibility</button>
+            <button id="RemarkBtn">Remark</button> 
+            <button id="MaterialsBtn">Materials and Labour Used</button> 
+            <button id="LabourBtn">Labour</button> 
+            <button id="DebitBtn">Debit to Customer</button> 
+            <button id="cem_respBtn"> CEM Responsible Staffs</button> 
+        </div>
+        <!-- jobOptions -->
+        <div id="jobOptions" class="section">
+            <h2>Nature of Job</h2> <hr>  <br>
+        
+                <label><input type="radio" name="jobType" value="customerInstallation" id='customerInstallation' onclick="showopt('customerInstallation')"> Customer Installation</label><br>
+                <label><input type="radio" name="jobType" value="CEMNetwork" onclick="showopt('CEMNetwork')"> CEM Network</label><br>
+                <label><input type="radio" name="jobType" value="CEMNetworkClaim" onclick="showopt('CEMNetworkClaim')"> CEM Network Claim Job</label><br>
+            
+        </div>
+        
+        <!-- Equipment I -->
+        <div id="equipmentI" class="section" class="">
+            <!-- Customer Installation Equipment I Options -->
+            <div id="customerInstallationEqI" class="hidden"> 
+				<h2>Equipment I</h2><hr> <br>
+                <label><input type="radio" id="equipment_qg" name="equipment" value="QG" onclick="showEquipment2Options('qg')" > QG</label><br>
+                <label><input type="radio" id="equipment_qc" name="equipment" value="QC"  onclick="showEquipment2Options('qc')" > QC</label><br>
+                <label><input type="radio" id="equipment_cps" name="equipment" value="CPS"  onclick="showEquipment2Options('cps')" > CPS</label><br>
+                <label><input type="radio" id="equipment_ccl" name="equipment" value="CCL"  onclick="showEquipment2Options('ccl')"  > CCL</label><br>
+                <label><input type="radio" id="equipment_customer_internal_device" name="equipment" value="Customer Internal Device"  onclick="showEquipment2Options('cid')" > Customer Internal Device</label><br>
+                <label><input type="radio" id="equipment_riser" name="equipment" value="Riser"  onclick="showEquipment2Options('riser')"  > Riser</label><br>
+                <label><input type="radio" id="equipment_box_ct" name="equipment" value="Box CT"  onclick="showEquipment2Options('boxCT')" > Box CT</label><br>
+                <label><input type="radio" id="equipment_meter_board_box" name="equipment" value="Meter Board/Box"  onclick="showEquipment2Options('meterBoardBox')" > Meter Board/Box</label><br>
+                <label><input type="radio" id="equipment_black_box" name="equipment" value="Black box"  onclick="showEquipment2Options('blackBox')" > Black box</label><br>
+            </div>
+            <!-- CEM Network Equipment I Options -->
+            <div id="CEMNetworkEqI" class="hidden" style="display: none;">
+				<h2>Equipment I</h2><hr> <br>
+                <label><input type="radio" id="equipment_meter" name="equipment" value="Meter" onclick="showEquipment2Options('meter')"> Meter</label><br>
+                <label><input type="radio" name="equipment" value="SE" onclick="showEquipment2Options('se')"> SE</label><br>
+                <label><input type="radio" name="equipment" value="PT" onclick="showEquipment2Options('pt')"> PT</label><br>
+                <label><input type="radio" name="equipment" value="RMU" onclick="showEquipment2Options('rmu')"> RMU</label><br>
+                <label><input type="radio" name="equipment" value="Transformer" onclick="showEquipment2Options('transformer')"> Transformer</label><br>
+                <label><input type="radio" name="equipment" value="QGBT" onclick="showEquipment2Options('qgbt')"> QGBT</label><br>
+                <label><input type="radio" name="equipment" value="CD" onclick="showEquipment2Options('cd')"> CD</label><br>
+                <label><input type="radio" name="equipment" value="PH" onclick="showEquipment2Options('ph')"> PH</label><br>
+                <label><input type="radio" name="equipment" value="CXD" onclick="showEquipment2Options('cxd')"> CXD</label><br>
+                <label><input type="radio" name="equipment" value="CDIP" onclick="showEquipment2Options('cdip')"> CDIP</label><br>
+                <label><input type="radio" name="equipment" value="Pole" onclick="showEquipment2Options('pole')"> Pole</label><br>
+                <label><input type="radio" name="equipment" value="PL" onclick="showEquipment2Options('pl')"> PL</label><br>
+                <label><input type="radio" name="equipment" value="Underground cable" onclick="showEquipment2Options('undergroundCable')"> Underground cable</label><br>
+                <label><input type="radio" name="equipment" value="Aerial cable" onclick="showEquipment2Options('aerialCable')"aerialCable> Aerial cable</label><br>
+                <label><input type="radio" name="equipment" value="Manhole" onclick="showEquipment2Options('manhole')"> Manhole</label><br>
+                <label><input type="radio" name="equipment" value="Charging Station" onclick="showEquipment2Options('chargingStation')"> Charging Station</label><br>
+                <label><input type="radio" name="equipment" value="EV Charger" onclick="showEquipment2Options('evCharger')"> EV Charger</label><br>
+                <label><input type="radio" name="equipment" value="Cannot Detect Fault" onclick="showEquipment2Options('cannotDetectFaultActuation')"> Cannot Detect Fault</label><br>
+            </div>
+            <!-- CEM Network Claim Job Equipment I Options -->
+            <div id="CEMNetworkClaimEqI" class="hidden" style="display: none;"> 
+				<h2>Equipment I</h2><hr> <br>
+                <label><input type="radio" name="equipment" value="Meter" onclick="showEquipment2Options('m1')"> Meter</label><br>
+                <label><input type="radio" name="equipment" value="CD" onclick="showEquipment2Options('c1')"> CD</label><br>
+                <label><input type="radio" name="equipment" value="PH" onclick="showEquipment2Options('p1')"> PH</label><br>
+                <label><input type="radio" name="equipment" value="CXD" onclick="showEquipment2Options('cxd1')"> CXD</label><br>
+                <label><input type="radio" name="equipment" value="CDIP" onclick="showEquipment2Options('cdip1')"> CDIP</label><br>
+                <label><input type="radio" name="equipment" value="Pole" onclick="showEquipment2Options('pole1')"> Pole</label><br>
+                <label><input type="radio" name="equipment" value="PL" onclick="showEquipment2Options('pl1')"> PL</label><br>
+                <label><input type="radio" name="equipment" value="Underground cable" onclick="showEquipment2Options('undergroundCable1')"> Underground cable</label><br>
+                <label><input type="radio" name="equipment" value="Aerial cable" onclick="showEquipment2Options('aerialCable1')"> Aerial cable</label><br>
+                <label><input type="radio" name="equipment" value="Manhole" onclick="showEquipment2Options('manhole1')"> Manhole</label><br>
+                <label><input type="radio" name="equipment" value="Charging Station" onclick="showEquipment2Options('chargingStation1')"> Charging Station</label><br>
+                <label><input type="radio" name="equipment" value="EV Charger" onclick="showEquipment2Options('evCharger1')"> EV Charger</label><br>
+                <label><input type="radio" name="equipment" value="Cannot Detect Fault" onclick="showEquipment2Options('cannotDetectFault1')"> Cannot Detect Fault</label><br>
+            </div>
+        </div>
+
+        <!-- Equipment II -->
+        <div id="equipmentII" class="section" class="">
+
+            <!-- Customer Installation Equipment II Options -->
+            <div id="customerInstallationEqII" class="hidden"> 
+				<h2>Equipment II</h2> <hr> <br>
+                <label><div id="numberEquipment2" >Number&nbsp;&nbsp;<input type="number" name="equipment2" value="Number" id="i2a"></div></label> 
+                <label><div id="circuitBreakerEquipment2" ><input type="checkbox"  name="equipment2" value="Circuit breaker" > Circuit breaker</div></label> 
+                <label><div id="isolatorEquipment2" ><input type="checkbox" name="equipment2" value="Isolator"> Isolator </div></label> 
+                <label><div id="busbarEquipment2" ><input type="checkbox"  name="equipment2" value="Busbar" > Busbar </div></label> 
+                <label><div id="fuseEquipment2"  ><input type="checkbox"  name="equipment2" value="Fuse" > Fuse </div></label> 
+				<label><div id="fuseBaseEquipment2" ><input type="checkbox"  name="equipment2" value="Fuse base"> Fuse base </div></label> 
+                <label><div id="terminalEquipment2" ><input type="checkbox"  name="equipment2" value="Terminal" > Terminal </div></label>  
+                <label><div id="connectorEquipment2" ><input type="checkbox" name="equipment2" value="Connector" > Connector </div></label> 
+				<label><div id="otherEquipment2"  ><input type="checkbox" name="equipment2" value="Other" > Other </div></label>  
+				<label><div id="threadBodyEquipment2" ><input type="checkbox" name="equipment2" value="Thread body" > Thread body </div></label> 
+                <label><div id="hvmvEquipment2"  ><input type="checkbox"  name="equipment2" value="HV/MV Equipment" > HV/MV Equipment </div></label> 
+                <label><div id="secondaryEquipment2" ><input type="checkbox"  name="equipment2" value="Secondary Equipment" > Secondary Equipment </div></label> 
+                <label><div id="lampPostEquipment2"  ><input type="checkbox"  name="equipment2" value="Lamp Post" > Lamp Post </div></label> 
+                <label><div id="lanternPLEquipment2" ><input type="checkbox"  name="equipment2" value="Lantern P.L" > Lantern P.L </div></label>
+                <label><div id="bulbEquipment2" ><input type="checkbox" name="equipment2" value="Bulb" > Bulb </div></label>
+                <label><div id="currentContactorEquipment2" ><input type="checkbox"  name="equipment2" value="Current Contactor" > Current Contactor </div></label>
+                <label><div id="timePhotoSensorEquipment2"  ><input type="checkbox"  name="equipment2" value="Time/Photo Sensor" > Time/Photo Sensor </div></label>
+                
+				<label><div id="steelTypeCoverEquipment2" ><input type="checkbox" name="equipment2" value="Steel Type Cover" > Steel Type Cover </div></label>
+                <label><div id="concreteTypeCoverEquipment2" ><input type="checkbox" name="equipment2" value="Concrete Type Cover" > Concrete Type Cover </div></label>
+                <label><div id="rcdEquipment2" ><input type="checkbox"  name="equipment2" value="RCD" class="hidden"> RCD </div></label>
+                <label><div id="chargingPlugCableEquipment2" ><input type="checkbox"  name="equipment2" value="Charging Plug/Cable" > Charging Plug/Cable </div></label>
+                <label><div id="clientRequestMaintenanceEquipment2" ><input type="checkbox"   name="equipment2" value="Client Request Maintenance" > Client Request Maintenance </div></label>
+                
+				<label><div id="handlingClientComplaintEquipment2" ><input type="checkbox" name="equipment2" value="Handling Client Complaint" > Handling Client Complaint </div></label>
+                <label><div id="nonElectricityRelatedPropertiesEquipment2" ><input type="checkbox" name="equipment2" value="Non Electricity Related Properties" > Non Electricity Related Properties </div></label>
+                <label><div id="powerRestoredByClientEquipment2" ><input type="checkbox" name="equipment2" value="Power Restored by Client" > Power Restored by Client </div></label>
+                <label><div id="lockDoorEquipment2" ><input type="checkbox" name="equipment2" value="Lock/Door" > Lock/Door </div></label>
+                <label><div id="mcbEquipment2" ><input type="checkbox" name="equipment2" value="MCB" > MCB </div></label>
+                <label><div id="cableTrenchEquipment2" ><input type="checkbox" name="equipment2" value="Cable Trench" > Cable Trench </div></label>
+                <label><div id="ctEquipment2" ><input type="checkbox" name="equipment2" value="CT" > CT </div></label>
+            </div>
+
+            <!-- CEM Network Equipment II Options -->
+            <div id="CEMNetworkEqII" class="hidden">
+                <h2>Equipment II</h2> <hr> <br>
+                <label><div id="numberEquipment3">Number&nbsp;&nbsp;<input type="number"   name="equipment2" value="Number" ></div></label> 
+                <label><div id="circuitBreakerEquipment3"><input type="checkbox"  name="equipment2" value="Circuit breaker" > Circuit breaker </div></label> 
+                <label><div id="isolatorEquipment3"><input type="checkbox"   name="equipment2" value="Isolator" > Isolator </div></label> 
+                <label><div id="busbarEquipment3"><input type="checkbox"  name="equipment2" value="Busbar"> Busbar </div></label> 
+                <label><div id="fuseEquipment3"><input type="checkbox"  name="equipment2" value="Fuse" > Fuse </div></label> 
+                <label><div id="fuseBaseEquipment3"><input type="checkbox"  name="equipment2" value="Fuse base" > Fuse base </div></label> 
+                <label><div id="terminalEquipment3"><input type="checkbox" name="equipment2" value="Terminal" > Terminal </div></label> 
+                <label><div id="connectorEquipment3"><input type="checkbox"  name="equipment2" value="Connector" > Connector </div></label> 
+                <label><div id="hvmvEquipment3"><input type="checkbox"  name="equipment2" value="HV/MV Equipment" > HV/MV Equipment </div></label> 
+                <label><div id="secondaryEquipment3"><input type="checkbox"  name="equipment2" value="Secondary Equipment" > Secondary Equipment </div></label> 
+                <label><div id="lampPostEquipment3"><input type="checkbox"  name="equipment2" value="Lamp Post" > Lamp Post </div></label> 
+                <label><div id="lanternPLEquipment3"><input type="checkbox"  name="equipment2" value="Lantern P.L" > Lantern P.L </div></label> 
+                <label><div id="bulbEquipment3"><input type="checkbox"  name="equipment2" value="Bulb"> Bulb </div></label> 
+                <label><div id="currentContactorEquipment3"><input type="checkbox"  name="equipment2" value="Current Contactor" > Current Contactor </div></label> 
+                <label><div id="timePhotoSensorEquipment3"><input type="checkbox"  name="equipment2" value="Time/Photo Sensor" > Time/Photo Sensor </div></label> 
+                <label><div id="steelTypeCoverEquipment3"><input type="checkbox"  name="equipment2" value="Steel Type Cover" > Steel Type Cover </div> </label> 
+                <label><div id="concreteTypeCoverEquipment3"><input type="checkbox"  name="equipment2" value="Concrete Type Cover" > Concrete Type Cover  </div></label>
+                <label><div id="rcdEquipment3"><input type="checkbox"  name="equipment2" value="RCD" > RCD </div></label>
+                <label><div id="chargingPlugCableEquipment3"><input type="checkbox"  name="equipment2" value="Charging Plug/Cable" > Charging Plug/Cable </div></label>
+            
+                <label><div id="nonElectricityRelatedPropertiesEquipment3"><input type="checkbox"  name="equipment2" value="Non Electricity Related Properties" > Non Electricity Related Properties </div></label>
+                <label><div id="powerRestoredByClientEquipment3"><input type="checkbox"  name="equipment2" value="Power Restored by Client" > Power Restored by Client </div></label>
+                <label><div id="otherEquipment3"><input type="checkbox" name="equipment2" value="Other"> Other </div></label>
+                <label><div id="lockDoorEquipment3"><input type="checkbox"  name="equipment2" value="Lock/Door" > Lock/Door </div></label>
+                <label><div id="mcbEquipment3"><input type="checkbox"  name="equipment2" value="MCB" > MCB </div></label>
+                <label><div id="cableTrenchEquipment3"><input type="checkbox"  name="equipment2" value="Cable Trench" > Cable Trench </div></label>
+                <label><div id="threadBodyEquipment3"><input type="checkbox"  name="equipment2" value="Thread body"> Thread body </div></label>
+                <label><div id="ctEquipment3"><input type="checkbox"  name="equipment2" value="CT" > CT </div></label>
+				<label><div id="bracketEquipment3"><input type="checkbox"  name="equipment2" value="Bracket" > Bracket </div></label>
+				<label><div id="clientRequestMaintenanceEquipment3"><input type="checkbox" name="equipment2" value="Client Request Maintenance" > Client Request Maintenance </div></label>
+				<label><div id="handlingClientComplaintEquipment3"><input type="checkbox"  name="equipment2" value="Handling Client Complaint" > Handling Client Complaint </div></label>
+            </div>
+
+            <!-- CEM Network Equipment II Options -->
+            <div id="CEMNetworkClaimEqII" style="display: none;" class="hidden"> 
+				<h2>Equipment II</h2> <hr> <br>
+				<label><div id="numberEquipment4">Number&nbsp;&nbsp;<input type="number"   name="equipment2" ></div></label>
+                <label><div id="circuitBreakerEquipment4"><input type="checkbox"  name="equipment2" value="Circuit breaker" > Circuit breaker </div></label>
+                <label><div id="isolatorEquipment4"><input type="checkbox"   name="equipment2" value="Isolator" > Isolator </div></label>
+                <label><div id="busbarEquipment4"><input type="checkbox"  name="equipment2" value="Busbar"> Busbar </div></label>
+                <label><div id="fuseEquipment4"><input type="checkbox"  name="equipment2" value="Fuse" > Fuse </div></label>
+                <label><div id="fuseBaseEquipment4"><input type="checkbox"  name="equipment2" value="Fuse base" > Fuse base </div></label>
+                <label><div id="terminalEquipment4"><input type="checkbox" name="equipment2" value="Terminal" > Terminal </div></label>
+                <label><div id="connectorEquipment4"><input type="checkbox"  name="equipment2" value="Connector" > Connector </div></label>
+                <label><div id="hvmvEquipment4"><input type="checkbox"  name="equipment2" value="HV/MV Equipment" > HV/MV Equipment </div></label>
+                <label><div id="secondaryEquipment4"><input type="checkbox"  name="equipment2" value="Secondary Equipment" > Secondary Equipment </div></label>
+                <label><div id="lampPostEquipment4"><input type="checkbox"  name="equipment2" value="Lamp Post" > Lamp Post </div></label>
+                <label><div id="lanternPLEquipment4"><input type="checkbox"  name="equipment2" value="Lantern P.L" > Lantern P.L </div></label>
+                <label><div id="bulbEquipment4"><input type="checkbox"  name="equipment2" value="Bulb"> Bulb </div></label>
+                <label><div id="currentContactorEquipment4"><input type="checkbox"  name="equipment2" value="Current Contactor" > Current Contactor </div></label>
+                <label><div id="timePhotoSensorEquipment4"><input type="checkbox"  name="equipment2" value="Time/Photo Sensor" > Time/Photo Sensor </div></label>
+                <label><div id="steelTypeCoverEquipment4"><input type="checkbox"  name="equipment2" value="Steel Type Cover" > Steel Type Cover </div> </label>
+                <label><div id="concreteTypeCoverEquipment4"><input type="checkbox"  name="equipment2" value="Concrete Type Cover" > Concrete Type Cover  </div></label>
+                <label><div id="rcdEquipment4"><input type="checkbox"  name="equipment2" value="RCD" > RCD </div></label>
+                <label><div id="chargingPlugCableEquipment4"><input type="checkbox"  name="equipment2" value="Charging Plug/Cable" > Charging Plug/Cable </div></label>
+                <label><div id="clientRequestMaintenanceEquipment4"><input type="checkbox" name="equipment2" value="Client Request Maintenance" > Client Request Maintenance </div></label> 
+				<label><div id="handlingClientComplaintEquipment4"><input type="checkbox"  name="equipment2" value="Handling Client Complaint" > Handling Client Complaint </div></label>
+                
+				<label><div id="bracketEquipment4"><input type="checkbox"  name="equipment2" value="Bracket" > Bracket </div> </label> 
+                <label><div id="nonElectricityRelatedPropertiesEquipment4"><input type="checkbox"  name="equipment2" value="Non Electricity Related Properties" > Non Electricity Related Properties </div></label>
+                <label><div id="powerRestoredByClientEquipment4"><input type="checkbox"  name="equipment2" value="Power Restored by Client" > Power Restored by Client </div></label>
+                <label><div id="otherEquipment4"><input type="checkbox" name="equipment2" value="Other"> Other </div></label>
+                <label><div id="lockDoorEquipment4"><input type="checkbox"  name="equipment2" value="Lock/Door" > Lock/Door </div></label>
+                <label><div id="mcbEquipment4"><input type="checkbox"  name="equipment2" value="MCB" > MCB </div></label>
+                <label><div id="cableTrenchEquipment4"><input type="checkbox"  name="equipment2" value="Cable Trench" > Cable Trench </div></label>
+                <label><div id="threadBodyEquipment4"><input type="checkbox"  name="equipment2" value="Thread body"> Thread body </div></label>
+                <label><div id="ctEquipment4"><input type="checkbox"  name="equipment" value="CT" > CT </div></label> 
+            </div> 
+
+        </div>
+
+
+        <!-- Equipment III -->
+        <div id="equipmentIII" class="section">
+    
+            
+            <!-- Customer Installation Equipment III Options -->
+            <div id="customerInstallationEqIII" class="hidden"> 
+				<h2>Equipment III</h2><hr> <br>
+                <label><div id="ph1"><input type="checkbox" id="phase1Equip" name="equipment3" value="Phase 1" > Phase 1  </div></label>
+                <label><div id="ph2"><input type="checkbox" id="phase2Equip" name="equipment3" value="Phase 2" > Phase 2  </div></label>
+                <label><div id="ph3"><input type="checkbox" id="phase3Equip" name="equipment3" value="Phase 3" > Phase 3  </div></label>
+                <label><div id="phn"><input type="checkbox" id="phaseNEquip" name="equipment3" value="Phase N" > Phase N  </div></label>
+            </div>
+
+            <!-- CEM Network Equipment III Options -->
+            <div id="CEMNetworkEqIII" style="display: none;"> 
+				<h2>Equipment III</h2><hr> <br>
+                <label><div id="phs1"><input type="checkbox" name="equipment3" value="Phase 1"> Phase 1  </div></label>
+                <label><div id="phs2"><input type="checkbox" name="equipment3" value="Phase 2"> Phase 2  </div></label>
+                <label><div id="phs3"><input type="checkbox" name="equipment3" value="Phase 3"> Phase 3  </div></label>
+                <label><div id="phs4"><input type="checkbox" name="equipment3" value="Phase N"> Phase N  </div></label>
+            </div>
+
+            <!-- CEM Network Claim Job Equipment III Options -->
+            <div id="CEMNetworkClaimEqIII" style="display: none;"> 
+				<h2>Equipment III</h2><hr> <br>
+                <label><div id="phj1"><input type="checkbox" name="equipment3" value="Phase 1"> Phase 1 </div></label>
+                <label><div id="phj2"><input type="checkbox" name="equipment3" value="Phase 2"> Phase 2 </div></label>
+                <label><div id="phj3"><input type="checkbox" name="equipment3" value="Phase 3"> Phase 3 </div></label>
+                <label><div id="phj4"><input type="checkbox" name="equipment3" value="Phase N"> Phase N </div></label>
+            </div>
+            
+        </div>
+
+        <!-- Protection Actuation I -->
+        <div id="protectionActuationI" class="section">
+            <!-- Common Protection Actuation I Options -->
+            <div id="commonProtectionActuationI" class="hidden"> 
+				<h2>Protection Actuation I</h2>  <hr> <br>
+                <label><div id="QGprotectionActuationI"><input type="radio" name="protectionActuationI" value="QG" > QG</div></label>
+                <label><div id="QCprotectionActuationI"><input type="radio" name="protectionActuationI" value="QC" > QC </div></label>
+                <label><div id="CPSprotectionActuationI"><input type="radio" name="protectionActuationI" value="CPS" > CPS   </div></label>
+                <label><div id="cclprotectionActuationI"><input type="radio" name="protectionActuationI" value="CCL" > CCL </div></label>
+                <label><div id="cusprotectionActuationI"><input type="radio" name="protectionActuationI" value="Customer Internal Device" > Customer Internal Device </div></label>
+                <label><div id="meterprotectionActuationI"><input type="radio" name="protectionActuationI" value="Meter" > Meter </div></label>
+                <label><div id="seprotectionActuationI"><input type="radio" name="protectionActuationI" value="SE"  > SE </div></label>
+                <label><div id="ptprotectionActuationI"><input type="radio" name="protectionActuationI" value="PT" > PT </div></label>
+                <label><div id="transprotectionActuationI"><input type="radio" name="protectionActuationI" value="Transformer" > Transformer </div></label>
+                <label><div id="rmuprotectionActuationI"><input type="radio" name="protectionActuationI" value="RMU" > RMU </div></label>
+                <label><div id="qgbtprotectionActuationI"><input type="radio" name="protectionActuationI" value="QGBT" > QGBT </div></label>
+                <label><div id="cdprotectionActuationI"><input type="radio" name="protectionActuationI" value="CD" > CD </div></label>
+                <label><div id="phprotectionActuationI"><input type="radio" name="protectionActuationI" value="PH" > PH </div></label>
+                <label><div id="cdipprotectionActuationI"><input type="radio" name="protectionActuationI" value="CDIP" > CDIP </div></label>
+                <label><div id="lamppostprotectionActuationI"><input type="radio" name="protectionActuationI" value="Lamp Post" > Lamp Post </div></label>
+                <label><div id="chargingstationprotectionActuationI"><input type="radio" name="protectionActuationI" value="Charging Station" > Charging Station </div></label>
+                <label><div id="evchargerprotectionActuationI"><input type="radio" name="protectionActuationI" value="EV Charger" > EV Charger </div></label>
+                <label><div id="nproprotectionActuationI"><input type="radio" name="protectionActuationI" value="No Protection Device Actuated" > No Protection Device Actuated </div></label>
+                <label><div id="otherprotectionActuationI"><input type="radio" name="protectionActuationI" value="Other" > Other </div></label>
+            </div>
+        </div>
+
+        <!-- Protection Actuation II -->
+		<div id="protectionActuationII" class="section">
+    
+            <!-- Common Protection Actuation II Options -->
+            <div id="commonProtectionActuationII" class="hidden"> 
+				<h2>Protection Actuation II</h2> <hr> <br>
+                <label><div id="numberprotectionActuationII">Number&nbsp;&nbsp;<input type="number" name="protectionActuationII"  id="prot2" > </div></label>
+                <label><div id="circuitbreakerprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="Circuit breaker"> Circuit breaker  </div></label>
+                <label><div id="mvfuseprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="MV Fuse"> MV Fuse  </div></label>
+                <label><div id="lvfuseprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="LV Fuse"> LV Fuse   </div></label>
+                <label><div id="mcbprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="MCB"> MCB   </div> </label>
+                <label><div id="sehvprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="SE HV/MV Protector"> SE HV/MV Protector  </div></label>
+                <label><div id="rcdprotectionActuationII"><input type="checkbox" name="protectionActuation" value="RCD"> RCD   </div></label>
+                <label><div id="FeederprotectionActuationII"><input type="checkbox" name="protectionActuationII" value="Feeder"> Feeder  </div></label>
+            </div>
+        </div> 
+
+
+        <!-- Protection Actuation III -->
+        <div id="protectionActuationIII" class="section">
+            <!-- Common Protection Actuation III Options -->
+            <div id="commonProtectionActuationIII" class="hidden"> 
+				<h2>Protection Actuation III</h2> <hr> <br>
+                <label><div id="pah1"><input type="checkbox" id="phase1Equip" name="protectionActuationIII" value="Phase 1"  > Phase 1</div></label>
+                <label><div id="pah2"><input type="checkbox" id="phase2Equip" name="protectionActuationIII" value="Phase 2"  > Phase 2</div></label>
+                <label><div id="pah3"><input type="checkbox" id="phase3Equip" name="protectionActuationIII" value="Phase 3"  > Phase 3</div></label> 
+                <label><div id="pah4">Capacity&nbsp;&nbsp;<input type="text" id="phaseNEquip" name="protectionActuationIII"  ></div></label>
+            </div>
+        </div>
+
+        <!-- Observation Section -->
+        <div id="observationSection" class="section">
+            <h2 id="obheading">Observation <br><hr></h2> <br>
+            <label><div id="Unsealed_ob1"><input type="checkbox" name="observation" value="Unsealed"> Unsealed </div></label>
+            <label><div id="Fused_ob1"><input type="checkbox" name="observation" value="Fused"> Fused </div></label>	
+            <label><div id="Trip_ob1"><input type="checkbox" name="observation" value="Trip"> Trip </div></label>
+            <label><div id="Brunt_ob1"><input type="checkbox" name="observation" value="Brunt"> Brunt </div></label>
+            <label><div id="Out_of_order_ob1"><input type="checkbox" name="observation" value="Out of order"> Out of order </div></label>
+            <label><div id="Disappeared_ob1"><input type="checkbox" name="observation" value="Disappeared"> Disappeared </div></label>
+            <label><div id="Damage_ob1"><input type="checkbox" name="observation" value="Damage"> Damage </div></label>
+            <label><div id="Short_circuit_ob1"><input type="checkbox" name="observation" value="Short circuit"> Short circuit </div></label>
+            <label><div id="Open_circuit_ob1"><input type="checkbox" name="observation" value="Open circuit"> Open circuit </div></label>
+            <label><div id="Smoke_ob1"><input type="checkbox" name="observation" value="Smoke"> Smoke </div></label>
+            <label><div id="Discharge_Leakage_ob1"><input type="checkbox" name="observation" value="Discharge/Leakage"> Discharge/Leakage </div></label>
+            <label><div id="Gas_leakage_ob1"><input type="checkbox" name="observation" value="Gas leakage"> Gas leakage </div></label>
+            <label><div id="Oil_leakage_ob1"><input type="checkbox" name="observation" value="Oil leakage"> Oil leakage </div></label>
+            <label><div id="Water_leakage_ob1"><input type="checkbox" name="observation" value="Water leakage"> Water leakage </div></label>
+            <label><div id="Standing_water_ob1"><input type="checkbox" name="observation" value="Standing water"> Standing water </div></label>
+            <label><div id="W/o_cover_plate_ob1"><input type="checkbox" name="observation" value="W/o cover plate"> W/o cover plate </div></label>
+            <label><div id="High/low_voltage_ob1"><input type="checkbox" name="observation" value="High/low voltage"> High/low voltage </div></label>
+            <label><div id="No_Fault_Detected_ob1"><input type="checkbox" name="observation" value="No Fault Detected"> No Fault Detected </div></label>
+            <label><div id="Customer_no_present_ob1"><input type="checkbox" name="observation" value="Customer no present"> Customer no present </div></label>
+            <label><div id="No_responsibility_ob1"><input type="checkbox" name="observation" value="No responsibility"> No responsibility </div></label>
+            <label><div id="Planned_Outage_ob1"><input type="checkbox" name="observation" value="Planned Outage"> Planned Outage </div></label>
+            <label><div id="Bad_contact_ob1"><input type="checkbox" name="observation" value="Bad contact"> Bad contact </div></label>
+            <label><div id="Spark_ob1"><input type="checkbox" name="observation" value="Spark"> Spark </div></label>
+        </div>
+
+        <!-- Repair Procedure Section -->
+        <div id="repairProcedureSection" class="section">
+            <h2 id="rproure">Repair Procedure<br><hr></h2><br>
+			<div id="rpod">
+            <label><input type="checkbox" name="repairProcedure" value="Reconnection"> Reconnection</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Repalcement"> Replacement</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Repair"> Repair</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Direct Connection"> Direct Connection</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Replace MCB/Fuse"> Replace MCB/Fuse</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Regulation"> Regulation</label><br>
+            <label> <input type="checkbox" > Reading <input type="number"  name="repairProcedure" id="repairnumber"></label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Temporary Cable Connect"> Temporary Cable Connect</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Connect - new customer"> Connect - new customer</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="De-Energization"> De-Energization</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Energization"> Energization</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Disconnection-Reconnection"> Disconnection-Reconnection</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Re-boot"> Re-boot</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Planned Job"> Planned Job</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Pump water"> Pump water</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Open PT door"> Open PT door</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Lighting public patrol"> Lighting public patrol</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Pass to contractor"> Pass to contractor</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Pass to other team follow"> Pass to other team follow</label><br>
+            <label><input type="checkbox" name="repairProcedure" value="Customer repair"> Customer repair</label><br>
+        </div>
+        </div>
+        <!-- Meter Seal Section -->
+        <div id="meterSealSection" class="section"> 
+			<div id="metalinfo">
+            <h2 id="mseal">Meter Seal</h2> <hr> <br>
+            <label>New Seal No.<input type="text" id="newSealNo" name="meterSeal"></label><br>
+           <label>Old Seal No.<input type="text" id="oldSealNo" name="meterSeal"></label><br>
+        </div>  
+		</div>
+        
+        <!-- Report Section -->
+        <div id="ReportSection" class="section">
+			<div id="reportviewer">
+            <h2 id="repoviewq">Report</h2> <hr> <br>
+            <label><input type="radio" name="Report" value="Provisional Repair"> Provisional Repair</label><br>
+            <label><input type="radio" name="Report" value="Definite Repair"> Definite Repair</label><br>
+            </div>
+       </div>
+        <!-- Preliminary cause of failure -->
+        <div id="PreliminarySection" class="section">
+			<div id="prmsc">
+            <h2 id="pcfo">Preliminary cause of failure</h2> <hr> <br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Fault in customer premise"> Fault in customer premise</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Overload"> Overload</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Assembly defect"> Assembly defect</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Lack of maintenance"> Lack of maintenance</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Ageing"> Ageing</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="External action">External action</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Atmospheric conditions">Atmospheric conditions</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Fire"> Fire</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Disconnect - non payment">Disconnect - non payment</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Overheat">Overheat</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value=" Water leakage"> Water leakage</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Animal or Pest"> Animal or Pest</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Third party damage"> Third party damage</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="Assembly defect"> Assembly defect</label><br>
+            <label><input type="radio" name="Preliminary cause of failure" value="No defect"> No defect</label><br>
+
+        </div>
+		</div>
+
+        <!-- Responsibility -->
+        <div id="ResponsibilitySection" class="section">
+			<div id="rpsec">
+            <h2 id="rho">Responsibility</h2> <hr> <br>
+            <label><input type="radio" name="CEM" value="CEM"> CEM</label><br>
+            <label><input type="radio" name="CEM" value="Non-CEM"> Non-CEM</label><br>
+		    <label><input type="radio" name="CEM" value="To be confirm"> To be confirm</label><br>	
+            </div>
+        </div>
+        <!-- Remark -->
+        <div id="RemarkSection" class="section">
+			<div id="resectpoint">
+            <h2 id="remarkpoint">Remark</h2>  <hr> <br>
+			<label for="longText">Content:</label><br>
+            <textarea id="longText" name="longText" rows="10" cols="80"></textarea>
+        </div>
+         </div>
+
+        <!-- Materials and Labour Used -->
+        <div id="MaterialSection" class="section">
+			<div id="mertsec">
+            <h2 id="mertlused">Materials and Labour Used</h2> <hr> <br>
+            <label>Description&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;<input type="textbox" name="Description" id="Description"></label><br>
+            <label>Fuse&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="number" name="Fuse" value="Fuse" id="Fuse"></label><br>
+            <label>Circuit breaker&nbsp;&nbsp;<input type="number" name="Circuitbreaker" value="Circuit breaker" id="Circuitbreaker"></label><br>
+            <label>Rating &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="number" name="Rating" value="Rating" id="Rating"></label><br>
+            <label>Qty.  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="number" name="Qty" value="Qty. " id="Qty"></label><br>
+            <label>Code &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="number" name="Code" value="Code" id="Code"></label><br>
+        </div>
+        </div>
+		
+
+        <!-- Labour -->
+        <div id="LabourSection" class="section">
+			<div id="lbsec">
+            <h2 id="lbour">Labour</h2> <hr> <br>
+            <Label>Hours: &nbsp;&nbsp;&nbsp; &nbsp;<input type="number" id="Hours" name="Hours"></Label><br>
+            <label>Work No:<input type="number" id="WorkNo" name="Work No."></label><br>
+            </div>
+        </div>
+
+        <!-- Debit to Customer -->
+        <div id="DebitSection" class="section">
+			    <div id="dbseec">
+                <h2 id="dbcus">Debit to Customer</h2> <hr> <br>
+                <label for="yes_no_dropdown"></label>
+                <select id="yes_no_dropdown" name="yes_no_dropdown"><br>
+                <option value="yes">Yes</option><br>
+                <option value="no">No</option><br>
+                </select>
+                <li>MOP<input type="number" id="mop" name="mop"></li>
+        </div>
+             </div>
+        <!-- CEM Responsible Staffs -->
+        <div id="CEMSection" class="section"> 
+			    <div id="cems">
+                <h2 id="cemrepo">CEM Responsible Staffs</h2>   <hr> <br>
+                <li>Staff No. <input type="number" id="staff-no" name="staff-no" ></li><br>
+                <li> Date &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <input type="date"  id="date" name="date" >
+			
+					</li><br>
+				
+               </div>
+		</div>
+
+    </div> 
+
+
+
+<!-- Customer Information the constan one-->
+
+<div id="container3" class="box">
+
+   <b> <h3>Time/Date</h3></b>
+    Request       :   <input type="text" name="" id="req"> 
+    Arrival       :   <input type="time" name="" id="arr"> 
+    Conclusion    :   <input type="text" name="" id="conc">
+    Date          :   <input type="date" name="" id="dat"> 
+    OMS Event No.     :   <input type="text" name="" id="oms">
+    Registration No. :   <input type="text" name="" id="reg"> 
+
+   <b><h3 >Customer Identification/Installation</h3></b>
+    Name    :  <input type="text" name="" id="name">   
+    Contact No. :  <input type="number" name="" id="contact"> 
+	Contract No. :  <input type="number" name="" id="contract"> 
+    Meter No.  :  <input type="number" name="" id="meter">    
+    Address :  <input type="text" name="" id="add">
+<!-- Signature -->
+
+<form id="signature-form" action="/submit-signature" method="POST">
+
+	<label for="signature">Signature:</label><br>
+	
+	<canvas id="signpad" class="sign-pad"></canvas>
+	<input type="hidden" id="sign" name="sign">
+<br>
+	<button type="button" id="clear-signature">Clear Signature</button><br><br>
+
+    <!-- <button id="submitBtn" onclick="submit()">Submit</button> -->
+    
+</form>
+<div  class="btn">
+	<button id="submitBtn" onclick="submit()">Submit</button> &nbsp; &nbsp; &nbsp;
+    </a><button id="previewBtn" onclick="preview()">Preview </a></button>
+</div>
+
+
+   <!-- The Modal -->
+   <div id="myModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<p id="modalText"></p>
+	</div>
+</div>
+</div>
+</div> 
+</div>
+</form>
+<script src="script.js"></script>
+</body>
+</html>
